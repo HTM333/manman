@@ -1,0 +1,112 @@
+/*在这里写评论页面样式*/
+.fanhui {
+	position: relative;
+	display: flex;
+	height: 0.3rem;
+	align-items: center;
+	button {
+		position: absolute;
+		right: 0.2rem;
+	}
+}
+h1 {
+	width: 100%;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	text-align: center;
+	background-color: gray;
+}
+.content {
+	width: 100%;
+	padding: 0.12rem;
+	ul > li {
+		border: .01rem solid gray;
+    margin-top: .1rem;
+    padding: .1rem;
+	}
+  i{
+        margin-right: .1rem;
+  }
+	.content_one {
+    margin: .07rem;
+		display: flex;
+		justify-content: space-between;
+    font-size: .14rem;
+	}
+	p {
+    margin-top: .36rem;
+		text-indent: 2em;
+	}
+}
+#btn{
+  width: 100%;
+}
+// 广告
+.guanggao{
+	opacity: 0;
+	width: 100%;
+	background-color: #fff;
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	height: .5rem;
+	padding: .1rem;
+	justify-content: space-between;
+	.glyphicon{
+		// 	position: absolute;
+    // left: .12rem;
+    // bottom: .12rem;
+		width: .17rem;
+     height: .17rem;
+		 font-weight: 100;
+		 line-height: .17rem;
+		 text-align: center;
+		 border-radius: 50%;
+		 color: #fff;
+		 background-color: gray;
+	}
+	i{
+		font-size: .3rem;
+			position: absolute;
+    left: .33rem;
+    bottom: .12rem;
+		width: .3rem;
+		height: .3rem;
+		border-radius: .05rem;
+		color: #fff;
+		background-color: orange;
+			width:.37rem;
+     height: .37rem;
+		 margin: 0 .1rem;
+		 line-height: .37rem;
+		 text-align: center;
+	}
+	>div{
+			position: absolute;
+    left: 1rem;
+    bottom: .12rem;
+		font-size: .12rem;
+		color: gray;
+		    // font-size: 12px;
+    // transform: translateX(-2.09rem);
+	}
+	em{
+		// float: right;
+			position: absolute;
+    right: .12rem;
+    bottom: .12rem;
+		width: .6rem;
+		height: .23rem;
+		color: #fff;
+		text-align: center;
+		line-height: .23rem;
+		font-size: .12rem;
+		border-radius: .05rem;
+		background-color: orange;
+	}
+}
+footer{
+	margin-bottom: .66rem;
+}

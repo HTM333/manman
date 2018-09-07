@@ -1,0 +1,160 @@
+body {
+  font-size: 16px;
+}
+
+.main_title_1 {
+  width: 100%;
+  padding: 10px 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main_title_1 .main_title_l {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_title_1 .main_title_l a {
+  margin-left: 5px;
+  font-size: .2rem;
+}
+
+.main_title_1 .main_title_l span {
+  margin-left: 5px;
+  font-size: .2rem;
+}
+
+.main_title_1 .main_title_r {
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: #aaa;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.main_title_2 {
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #cfcfcf;
+  padding: 10px 0;
+}
+
+.main_title_2 .mian_text {
+  padding: 10px;
+  font-size: .25rem;
+  background-color: #eeeeee;
+  color: #ea0084;
+}
+
+.main {
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 5px;
+}
+
+.main .list {
+  width: 100%;
+  background-color: #ebebeb;
+  border: 1px solid #cfcfcf;
+}
+
+.main .list .list_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: .23rem;
+}
+
+.main .list .list_title span:nth-child(1) {
+  line-height: .45rem;
+}
+
+.main .list .list_title span:nth-child(2) {
+  display: block;
+  width: .3rem;
+  height: .3rem;
+  background-image: url("../images/icon_bar.png");
+  background-size: 2.2rem 1.32rem;
+  background-position: .44rem -.92rem;
+}
+
+.main .list .list_main {
+  width: 100%;
+  display: none;
+}
+
+.main .list .list_main a {
+  display: block;
+  background-color: #f9f9f9;
+  padding: 15px 10px;
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .list .list_main a .num {
+  display: block;
+  width: .3rem;
+  height: .3rem;
+  text-align: center;
+  font-size: .12rem;
+  line-height: .3rem;
+  background-color: #c9c9c9;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.main .list .list_main a .center {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 70%;
+  height: 70%;
+}
+
+.main .list .list_main a .center .center_up {
+  font-size: .25rem;
+}
+
+.main .list .list_main a .center .center_bottom {
+  color: #a3a3a3;
+  font-size: .15rem;
+}
+
+.main .list .list_main a .right {
+  margin-top: .1rem;
+  display: block;
+  width: .3rem;
+  height: .3rem;
+  background-image: url("../images/icon_bar.png");
+  background-size: 2.2rem 1.32rem;
+  background-position: 1.46rem -0.07rem;
+}
+
+.main .list .list_main a:nth-child(1) .num {
+  background-color: red;
+}
+
+.main .list .list_main a:nth-child(2) .num {
+  background-color: orange;
+}
+
+.main .list .list_main a:nth-child(3) .num {
+  background-color: #8adf5b;
+}

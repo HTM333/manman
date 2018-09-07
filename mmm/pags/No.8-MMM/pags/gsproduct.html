@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!--引入公共样式-->
+  <link rel="stylesheet" href="../css/base.css">
+  <!--引入自己样式-->
+  <link rel="stylesheet" href="../css/function.css">
+
+  <title>Document</title>
+</head>
+
+
+<body>
+  <header>
+    <a href="../../../index.html" class="logo">
+            <img src="../images/header_logo.png" alt="">
+        </a>
+    <div class="search">
+      <input type="text" placeholder="请输入相比价商品">
+    </div>
+    <a href="../../../index.html" class="login">
+            <img src="../images/header_app.png" alt="">
+        </a>
+  </header>
+  <!--凑单品-->
+  <div class="ping">
+    <a href="../../../index.html">
+    <span class="glyphicon glyphicon-menu-left"></span>
+    <span>凑单品</span>
+    <span><img src="../images/header_app.png" alt=""></span>
+
+   </a>
+  </div>
+  <!--下拉菜单-->
+  <div class="xiala">
+    <div class="dropdown">
+      <span id="xiala_one">一号店</span>
+      <span class="glyphicon glyphicon-triangle-bottom"></span>
+    </div>
+    <div class="dropdown_2">
+      <span id="xiala_two">华南</span><span class="glyphicon glyphicon-triangle-bottom"></span>
+
+    </div>
+    <div class="" id="xiala_3">
+      <span>全部价格</span><span class="glyphicon glyphicon-triangle-bottom"></span>
+
+    </div>
+    <span class="glyphicon glyphicon-search"></span>
+  </div>
+  <div class="xiala_two">
+    <ul>
+
+    </ul>
+  </div>
+  <!--内容-->
+  <div class="content">
+    <ul>
+      <li>
+        <div><img src="" alt=""></div>
+        <p>sdfsda</p>
+        <div class="money ">
+          <sapn></sapn>
+          <span>去凑单</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button id="btn">
+  更多.......
+</button>
+  <footer>
+    <div>
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;" class="footer_top">返回顶部 </a>
+
+
+
+    </div>
+    <p class="footer_buy">
+      <a href="javascript:;">手机APP下载</a> 慢慢买手机版--掌上比价平台
+    </p>
+    <p>m.manmanbuy.com</p>
+  </footer>
+  <div class="guanggao">
+    <sapn class="glyphicon glyphicon-remove"></sapn>
+    <i>慢</i>
+    <div>
+      <a>慢慢买</a>
+      <a>全网比价，查看历史价格</a>
+    </div>
+    <em>立即打开</em>
+  </div>
+</body>
+<!--引入分页插件-->
+<!--<script src="../js/jquery.twbsPagination.js"></script>-->
+<!--引入模板引擎-->
+<script src="../lib/arttemplate/template-web.js"></script>
+<!--引入触屏js-->
+<script src="../lib/zepto/zepto.js"></script>
+<!-- 模板 -->
+<script id="navTpl1" type="text/html">
+  {{each arr value index }}
+  <li data_id="{{@ value.shopId}}" class="botton">{{@ value.shopName}}</li>
+  {{/each}}
+</script>
+<script id="navTpl1_2" type="text/html">
+  {{each arr value index }}
+  <li date_id="{{@ value.areaId}}" class="botton_2">{{@ value.areaName}}</li>
+  {{/each}}
+</script>
+<!--内容模板-->
+<script id="navTpl1_3" type="text/html">
+  {{each arr value index }}
+   <li>
+        <div><img src="{{@ value.productImg}}" alt=""></div>
+        <p>{{@ value.productName}}</p>
+        <div class="money ">
+          <sapn>{{@ value.productPrice}}</sapn>
+          <span>去凑单</span>
+        </div>
+      </li>
+  {{/each}}
+</script>
+<script src="../js/jquery-2.2.2.min.js"></script>
+<script>
+  jQuery.noConflict()
+</script>
+<script type="text/javascript">
+ $(window).scroll(function () {
+    // 滚动条距离顶部的距离 大于 200px时
+    if ($(window).scrollTop() >= 200) {
+      $(".guanggao").animate({
+        opacity: "1"
+      }, 2000);
+    } else {
+      $(".guanggao").animate({
+        opacity: "0"
+      }, 2000);
+    }
+  });
+  $("#btn").tap(function () {
+    alert("别点了，下面没有了！！！");
+  })
+
+
+  $(".xiala").on("tap", ".dropdown", function () {
+
+    $.get("http://193.112.55.79:9090/api/getgsshop", function (ret) {
+     
+
+      var html = template("navTpl1", {
+        arr: ret.result
+      });
+    
+      $(".xiala_two>ul").html(html);
+    })
+
+  })
+  $(".xiala").on("tap", ".dropdown_2", function () {
+
+    $.get("http://193.112.55.79:9090/api/getgsshoparea", function (ret) {
+ 
+
+      var html = template("navTpl1_2", {
+        arr: ret.result
+      });
+    
+      $(".xiala_two>ul").html(html);
+    })
+
+  })
+
+  $(".xiala").on("tap", "#xiala_3", function () {
+   
+    $(".xiala_two>ul>li").css({"display":"none"})
+  
+  })
+var id2 = 0;
+var id1 = 0;
+  $(".xiala_two").on("tap", ".botton", function () {
+    
+    id1 = $(this).attr("data_id");
+
+    var aaa = $(this).text();
+    console.log($(this).text());
+    $("#xiala_one").text(aaa);
+
+    name();
+    return id1;
+  })
+
+  $(".xiala_two").on("tap", ".botton_2", function () {
+    
+    id2 = $(this).attr("date_id");
+   
+    var aaa = $(this).text();
+     
+    var bbb = aaa.substr(0, 2);
+    console.log(bbb);
+    $("#xiala_two").text(bbb);
+ 
+    name();
+    return id2;
+  })
+ function name() {
+  
+   $.get("http://193.112.55.79:9090/api/getgsproduct", {
+    "shopid": id1,
+    "areaid":id2
+  }, function (ret) {
+
+
+    var html = template("navTpl1_3", {
+      arr: ret.result
+    });
+  
+    // 渲染
+    $(".content>ul").html(html);
+    
+  })
+   
+ }
+ $(function () {
+   name()
+   })
+</script>
+
+
+</html>

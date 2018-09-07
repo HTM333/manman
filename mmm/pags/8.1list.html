@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0,user-scalable=no'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品列表页面</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/list.css">
+    <script src="../js/iscroll-zoom.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">
+            <img src="../images/header_logo.png" alt="">
+        </a>
+        <div class="search">
+            <input type="text" placeholder="请输入相比价商品">
+        </div>
+        <a href="../index.html" class="login">
+            <img src="../images/header_app.png" alt="">
+        </a>
+    </header>
+
+
+
+
+    <div class="hint">
+        -----点餐时出示手机中的优惠券，即可享受优惠-----
+    </div>
+    <div id="wrapper">
+        <div class="box">
+            <!-- <div class="items">
+                <div class="food clearfix">
+                    <img src="../images/ic_bcj.png" alt="">
+                    <p>百钻面包糠200g炸鸡裹粉 金黄白色面包渣屑 肯德基家用油炸鸡排鸡柳猪排虾脆皮香蕉南瓜饼原料 白面包糠200g*1袋+黄面包糠200g*1袋</p>
+                    <span>￥28</span>
+                </div>
+                <div class="date">
+
+                    有效期至10月31日
+                </div>
+
+
+            </div> -->
+
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+<script src="../js/itcastEvent.js"></script>
+
+
+
+
+
+<!-- 模板引擎 -->
+<script src="../lib/arttemplate/template-web.js"></script>
+<!-- zepto -->
+<script src="../lib/zepto/zepto.js"></script>
+<script id="getcouponproduct" type="text/template">
+
+
+    {{each arr value index }}
+    <div class="items">
+        <div class="food clearfix">
+            {{@ value.couponProductImg}} 
+            <p>{{value.couponProductName}}</p>
+            <span>{{value.couponProductPrice}}</span>
+        </div>
+        <div class="date">
+
+                {{value.couponProductTime}}
+        </div>
+
+
+    </div>
+{{/each}}
+
+</script>
+
+<script type="text/javascript">
+    function GetRequest() {
+        //获取url中"?"符后的字串  
+        var url = location.search;
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+
+    var id = GetRequest().xx
+    console.log(GetRequest().xx);
+    $.get("http://193.112.55.79:9090/api/getcouponproduct", {
+        "couponid": id
+    }, function (ret) {
+        console.log(ret);
+
+        var html = template("getcouponproduct", {
+            arr: ret.result
+        });
+        // console.log(html);
+        // 渲染
+
+        $(".box").html(html);
+        var myScroll = new IScroll('#wrapper', {
+            zoom: true,
+            mouseWheel: true,
+            wheelAction: 'zoom'
+        });
+
+    })
+</script>

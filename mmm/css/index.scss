@@ -1,0 +1,91 @@
+$color: #ea0084;
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.eot');
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+    url('iconfont.woff') format('woff'),
+    url('iconfont.ttf') format('truetype'),
+    url('iconfont.svg#iconfont') format('svg');
+  }
+nav{
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    // height: 400px;
+    
+    a{
+        padding-top: 35px;
+        width: 25%;
+        color: rgb(161, 161, 161);
+        img{
+            width: 50%;
+            margin: 0 auto;
+        }
+        p{
+            margin-top: 12px;
+            text-align: center;
+        }
+    }
+    a:nth-last-child(-n+4){
+        display: none;
+
+    }
+}
+.discountLis{
+    margin-top: .1rem;
+    .lis_title{
+        height: .4rem;
+        background: $color;
+        padding-left: .15rem;
+        line-height: .4rem;
+        color: white;
+    }
+    .lis_content{
+        li{
+            background: white;
+            padding: .2rem ;
+            border-bottom: .01rem solid #ccc;
+            a{
+                display: flex;
+                position: relative;
+                img{
+                    height: 1rem;
+                    width: 1rem;
+                    background: pink;
+                }
+                >div{
+                    flex: 1;
+                    padding-left: .2rem;
+                    p{
+                        font-size: .22rem;
+                        margin: 0;
+                        color: black;
+                    }
+                    >i{
+                        color: red;
+                        display: block;
+                        padding: .1rem;
+                    }
+                    span{
+                        font-size: .18rem;
+                        color: rgb(122, 122, 122);
+                    }
+                }
+                >span{
+                    display: block;
+                    position: absolute;
+                    color: rgb(122, 122, 122);
+                    bottom: 0;
+                    right: 0;
+                    >i{
+                        display: inline-block;
+                        height: .2rem;
+                        width: .2rem;
+                        // background: red;
+                    }
+                }
+            }
+        }
+        
+    }
+}

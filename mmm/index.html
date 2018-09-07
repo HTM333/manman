@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <header>
+        <a href="javascript:;" class="logo">
+            <img src="./images/header_logo.png" alt="">
+        </a>
+        <div class="search">
+            <!-- <input type="text" placeholder="请输入相比价商品"> -->
+        </div>
+        <a href="javascript:;" class="login">
+            <img src="./images/header_app.png" alt="">
+        </a>
+    </header>
+    <div class="slide">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:;"><img src="./images/ban1.png" alt=""></a></div>
+                <div class="swiper-slide"><a href="javascript:;"><img src="./images/ban2.png" alt=""></a></div>
+                <div class="swiper-slide"><a href="javascript:;"><img src="./images/ban3.png" alt=""></a></div>
+                <div class="swiper-slide"><a href="javascript:;"><img src="./images/ban4.png" alt=""></a></div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- 导航 -->
+    <nav id="nnb">
+       
+    </nav>
+    <div class="discountLis">
+        <div class="lis_title">超值折扣推荐</div>
+        <div class="lis_content">
+            <ul>
+                <li>
+                    <a href="javascript:;">
+                        <img src="" alt="">
+                        <div>
+                            <p>移动端凑单品：海天 鲜味 生抽 1.28</p>
+                            <i>10</i>
+                            <span>京东商城| <i>10-25 14:10</i> </span>
+                        </div>
+                        <span>
+                            <i class="iconfont">&#xe63d;</i>
+                            1
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="javascript:;" class="footer_top">
+                <span>返回顶部</span>
+            </a>
+        </div>
+        <p class="footer_buy">
+            <a href="javascript:;">手机APP下载</a>
+            慢慢买手机版--掌上比价平台
+        </p>
+        <p>m.manmanbuy.com</p>
+    </footer>
+</body>
+<!-- <script src="./js/jquery.1.12.4.js"></script> -->
+<script src="./js/zepto.js"></script>
+<script src="./js/swiper.min.js"></script>
+
+<script src="./js/bootstrap.js"></script>
+<script src="./js/template-web.js"></script>
+<script src="./js/index.js"></script>
+<script id="lis" type="text/html">
+    {{each arr value index }}
+        <li>
+            <a href="./pags/gnzk.html?id={{value.productId}}">
+                {{@ value.productImg2}}
+                <div>
+                    <p>{{value.productName}}</p>
+                    <i>10</i>
+                    <span>京东商城| <i>10-25 14:10</i> </span>
+                </div>
+                <span>
+                    <i></i>
+                    {{value.productComCount
+                    }}
+                </span>
+            </a>
+        </li>
+  {{/each}}
+</script>
+<script id="navlis" type="text/html">
+    {{each arr value index }}
+    <a href="./pags/{{value.titlehref}}">
+        {{@ value.img}}
+        <p>{{value.name}}</p>
+    </a>
+  {{/each}}
+</script>
+</html>
+

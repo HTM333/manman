@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!--引入公共样式-->
+  <link rel="stylesheet" href="../css/base.css">
+  <!--引入自己样式-->
+  <link rel="stylesheet" href="../css/shopping.css">
+
+  <title>Document</title>
+  <style>
+    .boxbox {
+      width: 56px;
+      height: 50px;
+      background: url("../images/musicBtn.gif") no-repeat;
+      display: block;
+      background-position: 0 100%;
+      cursor: pointer;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+
+    }
+
+    .closebox {
+      background-position: 0 0;
+    }
+  </style>
+</head>
+ 
+
+<body>
+  <audio src="../images/纯音乐 - 世界顶级模特走秀背景音乐.mp3"></audio>
+  <header>
+    <a href="../../../index.html" class="logo">
+            <img src="../images/header_logo.png" alt="">
+        </a>
+    <div class="search">
+      <input type="text" placeholder="请输入相比价商品">
+    </div>
+    <a href="../../../index.html" class="login">
+            <img src="../images/header_app.png" alt="">
+        </a>
+  </header>
+  <!--返回分类列表-->
+
+  <div class="fanhui">
+    <a href="javascript:;">首页<span class="glyphicon glyphicon-menu-right"></span></a>
+    <a href="./sitenav.html">分类<span class="glyphicon glyphicon-menu-right"></span></a>
+    <a href="javascript:;">列表<span class="glyphicon glyphicon-menu-right"></span></a>
+    <button class="pull-right">筛选</button>
+  </div>
+  <!--内容-->
+  <div class="content">
+    <!--<div class="box">
+    <div class="left">
+      <img src="" alt="">
+    </div>
+    <div class="right">
+      <p>容声(Ronshen) BCD-228D11SY 228升 三门冰箱</p>
+      <i>￥1599.00</i>
+      <div>
+        <span>报价(3)</span>
+      <span>评论(2531)</span>
+      </div>
+      
+    </div>
+  </div>-->
+
+  </div>
+  <footer>
+    <div>
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;" class="footer_top">返回顶部 </a>
+
+
+
+    </div>
+    <p class="footer_buy">
+      <a href="javascript:;">手机APP下载</a> 慢慢买手机版--掌上比价平台
+    </p>
+    <p>m.manmanbuy.com</p>
+  </footer>
+  <div class="boxbox closebox">
+  </div>
+  <div class="guanggao">
+    <sapn class="glyphicon glyphicon-remove"></sapn>
+    <i>慢</i>
+    <div>
+      <a>慢慢买</a>
+      <a>全网比价，查看历史价格</a>
+    </div>
+    <em>立即打开</em>
+  </div>
+</body>
+<!--引入分页插件-->
+<!--<script src="../js/jquery.twbsPagination.js"></script>-->
+<!--引入模板引擎-->
+<script src="../lib/arttemplate/template-web.js"></script>
+<!--引入触屏js-->
+<script src="../lib/zepto/zepto.js"></script>
+<!-- 模板 -->
+<script id="navTpl1" type="text/html">
+  {{each arr value index }}
+  <div class="box">
+    <div class="left">
+      {{@ value.productImg}}
+    </div>
+    <div class="right">
+      <p>{{@ value.productName}}</p>
+      <i>{{@ value.productPrice}}</i>
+      <div>
+        <a href="./2.2pinglun.html?xx={{@ value.productId}}">
+           <span>{{@ value.productQuote}}</span>
+      <span>{{@ value.productCom}}</span>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+  {{/each}}
+</script>
+<script src="../js/jquery-2.2.2.min.js"></script>
+<script>
+  jQuery.noConflict()
+</script>
+<script type="text/javascript">
+ $(window).scroll(function () {
+    // 滚动条距离顶部的距离 大于 200px时
+    if ($(window).scrollTop() >= 200) {
+      $(".guanggao").animate({
+        opacity: "1"
+      }, 2000);
+    } else {
+      $(".guanggao").animate({
+        opacity: "0"
+      }, 2000);
+    }
+  });
+  $(function () {
+    var fais = true;
+    $('.boxbox').tap(function () {
+      $(this).toggleClass('closebox');
+      if (fais) {
+        $('audio')[0].pause() //在外面设置一个
+        fais = false
+      } else {
+        $('audio')[0].play()
+        fais = true
+      }
+    })
+  })
+
+  function GetRequest() {
+    //获取url中"?"符后的字串  
+    var url = location.search;
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for (var i = 0; i < strs.length; i++) {
+        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
+
+  var id = GetRequest().xx
+
+  $.get("http://193.112.55.79:9090/api/getproductlist", {
+    "categoryid": id
+  }, function (ret) {
+
+
+    var html = template("navTpl1", {
+      arr: ret.result
+    });
+
+    // 渲染
+    $(".content").html(html);
+  })
+</script>
+
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>国内折扣主页</title>
+  <link rel="stylesheet" href="../css/base1.css">
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/discount.css">
+
+</head>
+
+<body>
+  <div class="manman">
+    <!-- 头部 -->
+    <header>
+      <a href="../index.html" class="logo">
+        <img src="../images/header_logo.png" alt="">
+      </a>
+      <div class="search">
+        <input type="text" placeholder="请输入相比价商品">
+      </div>
+      <a href="../index.html" class="login">
+        <img src="../images/header_app.png" alt="">
+      </a>
+    </header>
+    <!-- 内容 -->
+    <div class="content">
+      <ul class="clearfix">
+        <!-- <li>
+          <div class="image">
+            <img src="../public/1.jpg" alt="">
+          </div>
+          <div class="title">
+            <a href="javascript:;">佰伦世家睡衣女秋季针织棉家居服套装</a>
+          </div>
+          <div class="subtit">45.9元</div>
+          <div class="info">国美 | <span>2018/9/5 17:04</span></div>
+        </li> -->
+      </ul>
+    </div>
+
+    <!-- 底部 -->.
+    <footer>
+      <div>
+        <a href="javascript:;">登录</a>
+        <a href="javascript:;">注册</a>
+        <a href="javascript:;" class="footer_top">
+          <span>返回顶部</span>
+        </a>
+      </div>
+      <p class="footer_buy">
+        <a href="javascript:;">手机APP下载</a>
+        慢慢买手机版--掌上比价平台
+      </p>
+      <p>m.manmanbuy.com</p>
+    </footer>
+  </div>
+</body>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+<script src="../js/jquery-2.2.2.min.js"></script>
+<script>
+  jQuery.noConflict()
+</script>
+<!-- 模板 -->
+<script type="text/template" id="productId">
+  {{each arr value index }}
+  <li>
+      <div class="image">
+        <!-- <img src="./index1.html?xx={{value.productImg}}" alt=""> -->
+        {{@ value.productImg}}
+      </div>
+      <div class="title">
+        <a href="javascript:;">{{value.productName}}</a>
+      </div>
+      <div class="subtit">{{value.productPrice}}</div>
+      <div class="info">{{value.productFrom}} | <span>{{value.productTime}}</span></div>
+    </li>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+  $.get("http://193.112.55.79:9090/api/getinlanddiscount", function (ret) {
+    console.log(ret);
+
+    // template(模板的id,要渲染的数据)
+    //  var html=template("getmoneyctrl",{arr:ret.result});
+    var html = template("productId", {
+      arr: ret.result
+    });
+    // console.log(html);
+    // 渲染
+    $(".content ul").html(html);
+
+    // evnetList();
+  })
+</script>
+<script>
+  setFz();
+  //  屏幕的宽度改变之后 
+  window.onresize = function () {
+    setFz();
+  }
+  function setFz() {
+
+
+    // 当前屏幕的宽度
+    var screenWidth = document.querySelector("html").offsetWidth;
+    // 基础值
+    var baseVal = 100;
+    // 设计稿的宽度
+    var pageWidth = 640;
+    // 字体大小
+    var fz = baseVal * screenWidth / pageWidth;
+
+
+    document.querySelector("html").style.fontSize = fz + "px";
+  }
+
+
+</script>
+</html>

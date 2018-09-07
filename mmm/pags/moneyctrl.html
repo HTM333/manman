@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>省钱控</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/cheaper.css">
+  <link rel="stylesheet" href="../lib/font-k/iconfont.css">
+</head>
+
+<body>
+  <div class="view">
+    <!-- 头部 -->
+    <header>
+      <a href="../index.html" class="logo">
+        <img src="../images/header_logo.png" alt="">
+      </a>
+      <div class="search">
+        <input type="text" placeholder="请输入相比价商品">
+      </div>
+      <a href="../index.html" class="login">
+        <img src="../images/header_app.png" alt="">
+      </a>
+    </header>
+    <!-- 导航 -->
+    <div class="mmm_nav"></div>
+
+    <!-- 商品列表 -->
+    <div class="mmm_list">
+      <ul class="clearfix ">
+        <!-- <li class="clearfix">
+          <a href="javascript:;">
+            <div class="picture">
+              <img src="../public/1.jpg" alt="">
+            </div>
+            <div class="info">
+              <div class="title">
+                蓝钻贵族 苹果/Micro-USB/Type-C数据线 1m
+                <span>599元包邮</span>
+              </div>
+              <div class="sel_com">
+                <span class="seller">京东商城 | 09-05 09:00</span>
+                <span class="comment"><i class="iconfont">&#xe60e;</i> 0 </span>
+              </div>
+            </div>
+          </a>
+        </li> -->
+      </ul>
+    </div>
+
+    <!-- 分页 -->
+    <div class="paging">
+      <ul>
+        <li>
+          <a href="javascript:;">上一页</a>
+        </li>
+        <li>
+          <a href="javascript:;">5/200<i class="iconfont">&#xe601;</i></a>
+        </li>
+        <li>
+          <a href="javascript:;">下一页</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="return">
+      <a href="javascript:;">首页<i class="iconfont">&#xe668;</i> > </a>
+      省钱控
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+      <div>
+        <a href="javascript:;">登录</a>
+        <a href="javascript:;">注册</a>
+        <a href="javascript:;" class="footer_top">
+          <span>返回顶部</span>
+        </a>
+      </div>
+      <p class="footer_buy">
+        <a href="javascript:;">手机APP下载</a>
+        慢慢买手机版--掌上比价平台
+      </p>
+      <p>m.manmanbuy.com</p>
+    </footer>
+  </div>
+
+</body>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+
+<script type="text/template" id="getmoneyctrl">
+  {{each arr value index }}
+  <li class="clearfix">  
+      <a href="javascript:;">
+          <div class="picture">
+            <!-- <img src="./index1.html?xx={{value.productImg2}}" alt=""> -->
+            {{@ value.productImg2}}
+          </div>
+          <div class="info">
+            <div class="title">
+              {{value.productName}}
+              <span> {{value.productPinkage}} </span>
+            </div>
+            <div class="sel_com">
+              <span class="seller">{{value.productFrom}}</span>
+              <span class="comment"><i class="iconfont">&#xe60e;</i> {{value.productComCount}} </span>
+            </div>
+          </div>
+      </a>
+  </li>
+  {{/each}}
+</script>
+
+<script type="text/javascript">
+  $.get("http://193.112.55.79:9090/api/getmoneyctrl", function (ret) {
+    console.log(ret);
+
+    // template(模板的id,要渲染的数据)
+    //  var html=template("getmoneyctrl",{arr:ret.result});
+    var html = template("getmoneyctrl", {
+      arr: ret.result
+    });
+    // console.log(html);
+    // 渲染
+    $(".mmm_list ul").html(html);
+
+    // evnetList();
+  })
+</script>
+
+</html>

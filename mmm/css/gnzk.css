@@ -1,0 +1,188 @@
+h1 {
+  margin: 0;
+}
+
+header {
+  background: #ea0084;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  padding-left: 10px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.gn_content {
+  width: 100%;
+  padding: .1rem .3rem;
+  background: white;
+  position: relative;
+}
+
+.gn_content .con_title {
+  margin: 0;
+  font-weight: 600;
+  padding: .2rem 0;
+}
+
+.gn_content .con_time {
+  padding-bottom: .3rem;
+}
+
+.gn_content .con_time span {
+  font-size: .16rem;
+  color: #ccc;
+}
+
+.gn_content .con_con {
+  width: 100%;
+}
+
+.gn_content .con_con .con_sImg {
+  float: right;
+  width: 100px;
+  height: 100px;
+  margin: 0 0 .05rem .2rem;
+  background: #ea0084;
+}
+
+.gn_content .con_con > p {
+  word-wrap: break-word;
+  line-height: .5rem;
+}
+
+.gn_content .con_con .bigImg {
+  margin: 0 auto;
+}
+
+.gn_content .con_buy {
+  margin: .5rem auto;
+  height: .5rem;
+  width: 80%;
+  background: #ea0084;
+  text-align: center;
+  line-height: .5rem;
+  color: white;
+  border-radius: .08rem;
+}
+
+.gn_content .buyIng {
+  display: none;
+  width: 70%;
+  height: 3rem;
+  overflow: hidden;
+  margin: .5rem auto;
+  position: relative;
+}
+
+.gn_content .buyIng > .con_btn {
+  text-align: center;
+  height: .3rem;
+  width: 0.3rem;
+  padding: 0;
+  line-height: .3rem;
+  font-size: .16rem;
+  border-radius: .15rem;
+  position: absolute;
+  background: #ea0084;
+  top: 0;
+  right: 0;
+}
+
+.gn_content .buyIng ul {
+  border: .01rem solid #ccc;
+  width: 100%;
+  background: white;
+}
+
+.gn_content .buyIng ul li {
+  padding: .05rem 0;
+  border-bottom: .01rem solid #ccc;
+}
+
+.gn_content .buyIng ul li a {
+  color: #606060;
+}
+
+.gn_content .buyIng ul li a span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.gn_content .buyIng ul li a span strong {
+  color: #ea0084;
+}
+
+.cu-content-pl .tit {
+  padding-top: .3rem;
+}
+
+.cu-content-pl .reply {
+  border: .01rem solid #ccc;
+  padding-top: 0.01rem;
+  overflow: hidden;
+}
+
+.cu-content-pl .reply #ctl00_ContentBody_txt_nr {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: 0;
+}
+
+.cu-content-pl .reply .ctrl {
+  height: 36px;
+  margin-left: -4px;
+  border-top: solid 1px #f2f2f2;
+}
+
+.cu-content-pl .reply .ctrl input {
+  background-color: #ea0084;
+  color: white;
+}
+
+.cu-content-pl .list ul li {
+  padding: .2rem 0;
+}
+
+.cu-content-pl .list ul li .userimg {
+  width: .4rem;
+  float: left;
+  overflow: hidden;
+}
+
+.cu-content-pl .list ul li .userimg img {
+  width: .4rem;
+  background-position: top;
+  border-radius: .2rem;
+  height: .4rem;
+}
+
+.cu-content-pl .list ul li .con .name {
+  padding-left: .5rem;
+}
+
+.cu-content-pl .list ul li .con .name .username {
+  color: #5997c0;
+  font-size: .13rem;
+  float: left;
+}
+
+.cu-content-pl .list ul li .con .name .time {
+  color: #999999;
+  font-size: .13rem;
+  float: right;
+}
+
+.cu-content-pl .list ul li .con .content {
+  padding-left: .5rem;
+  word-break: break-all;
+  font-size: 15px !important;
+  color: #606060;
+  line-height: 20px;
+}

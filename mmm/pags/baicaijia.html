@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/media.css">
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/6.bcj.css">
+
+</head>
+
+<body>
+  <header>
+    <a href="../index.html" class="logo">
+      <img src="../images/header_logo.png" alt="">
+    </a>
+    <div class="search">
+      <input type="text" placeholder="请输入相比价商品">
+    </div>
+    
+  </header>
+
+  <div class="bcj">
+    <a href="../index.html"></a>
+    <span>白菜价-淘宝内部卷</span>
+    <a href="../index.html">
+        <img src="../images/header_app.png" alt="">
+    </a>
+  </div>
+
+  <!-- 内容开始 -->
+  <div class="main">
+    <div class="main_title">
+      <ul class="clearfix">
+        <!-- <li><a href="javascript:;">全部</a></li> -->
+      </ul>
+    </div>
+    <!-- 商品列表 -->
+    <div class="list">
+      <!-- <div class="list_box">
+        <div class="list_box_l">
+            <img src="../update/Thumb_2014060013462043295.jpg" alt="">
+        </div>
+        <div class="list_box_r">
+            <h4>定你大咖啡机喇返 阿萨德附近了阿萨德附近了阿萨德附近了阿萨德附近了阿萨德附近了</h4>
+            <div class="rmb">￥1234</div>
+            <span class="bj">报价（1）</span>
+            <span class="pl">评论（123123）</span>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="upTop">
+    <span></span>
+  </div>
+
+  <footer>
+    <div>
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;" class="footer_top">
+        <span>返回顶部</span>
+      </a>
+    </div>
+    <p class="footer_buy">
+      <a href="javascript:;">手机APP下载</a>
+      慢慢买手机版--掌上比价平台
+    </p>
+    <p>m.manmanbuy.com</p>
+  </footer>
+</body>
+
+</html>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+<script src="../js/6.bcj.js"></script>
+<script type="text/html" id="main_title_list">
+  {{each arr as key val}}
+    <li><a href="javascript:;" class="main_title_a" data-id="{{key.titleId}}">{{key.title}}</a></li>
+  {{/each}}
+</script>
+
+<!-- 第一次全部 -->
+<script type="text/html" id="listTemplate1">
+  {{each arr as key val}}
+    <div class="list_box">
+        <a href="javascript:;">
+        <div class="list_box_l">
+          {{@key.productImg}}
+        </div>
+        <div class="list_box_r">
+          <h4>
+            {{@key.productName}}
+          </h4>
+          <div class="rmb">{{@key.productPrice}}</div>
+          {{@key.productCouponRemain}}
+          {{@key.productCoupon}}
+          {{@key.productHref}}
+        </div>
+      </a>
+    </div>
+  {{/each}}
+</script>
+
+<!-- 点击后的模版 -->
+<script type="text/html" id="listTemplate2">
+  {{each arr as key val}}
+    <div class="list_box">
+        <a href="javascript:;">
+        <div class="list_box_l">
+          {{@key.productImg}}
+        </div>
+        <div class="list_box_r">
+          <h4>
+            {{@key.productName}}
+          </h4>
+          <div class="rmb">{{@key.productPrice}}</div>
+          {{@key.productCouponRemain}}
+          {{@key.productCoupon}}
+          {{@key.productHref}}
+        </div>
+      </a>
+    </div>
+  {{/each}}
+</script>

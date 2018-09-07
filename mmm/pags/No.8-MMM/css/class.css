@@ -1,0 +1,160 @@
+@charset "UTF-8";
+/*在这里写分类页面的样式*/
+/*头部搜索*/
+.head {
+  width: 100%;
+  height: 0.8rem;
+  font-size: 0.2rem;
+  background: yellow;
+}
+
+.box h2 {
+  font-family: 'Helvetica Neue', Helvetica, STHeiTi, sans-serif !important;
+  background-color: #ededed;
+  margin: 0;
+  color: #000;
+  font-size: 0.22rem;
+  display: block;
+  padding: 0.15rem;
+  border-bottom: 0.01rem solid #ccc;
+}
+
+.box .dianqi {
+  display: none;
+  width: 100%;
+}
+
+.box .dianqi ul {
+  background-color: #f9f9f9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.box .dianqi ul li {
+  font-family: STHeiTi;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.15rem 0;
+  width: 33.3333%;
+  border-right: 0.01rem solid #ccc;
+  border-bottom: 0.01rem solid #ccc;
+}
+
+.box .dianqi ul > li:nth-child(3n) {
+  border-right: 0;
+}
+
+/*下拉列表*/
+.litbiao .litbiao_ul {
+  margin-bottom: 0.2rem;
+}
+
+.litbiao .litbiao_ul li {
+  position: relative;
+  font-family: 'Helvetica Neue', Helvetica, STHeiTi, sans-serif !important;
+  font-weight: 600;
+  padding: 0.12rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-bottom: 0.01rem solid #ccc;
+}
+
+.litbiao .litbiao_ul li:hover div {
+  display: block;
+}
+
+.litbiao .litbiao_ul li span {
+  position: absolute;
+  top: 0.17rem;
+  right: 0.17rem;
+}
+
+footer {
+  width: 100%;
+  height: 1rem;
+  background-color: #ccc;
+}
+
+.guanggao {
+  opacity: 0;
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: .5rem;
+  padding: .1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.guanggao .glyphicon {
+  width: .17rem;
+  height: .17rem;
+  font-weight: 100;
+  line-height: .17rem;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background-color: gray;
+}
+
+.guanggao i {
+  font-size: .3rem;
+  position: absolute;
+  left: .33rem;
+  bottom: .12rem;
+  width: .3rem;
+  height: .3rem;
+  border-radius: .05rem;
+  color: #fff;
+  background-color: orange;
+  width: .37rem;
+  height: .37rem;
+  margin: 0 .1rem;
+  line-height: .37rem;
+  text-align: center;
+}
+
+.guanggao > div {
+  position: absolute;
+  left: 1rem;
+  bottom: .12rem;
+  font-size: .12rem;
+  color: gray;
+}
+
+.guanggao em {
+  position: absolute;
+  right: .12rem;
+  bottom: .12rem;
+  width: .6rem;
+  height: .23rem;
+  color: #fff;
+  text-align: center;
+  line-height: .23rem;
+  font-size: .12rem;
+  border-radius: .05rem;
+  background-color: orange;
+}
+
+footer {
+  margin-bottom: .66rem;
+}

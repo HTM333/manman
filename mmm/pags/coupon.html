@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0,user-scalable=no'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优惠券页面</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/coupon.css">
+
+</head>
+
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">
+            <img src="../images/header_logo.png" alt="">
+        </a>
+        <div class="search">
+            <input type="text" placeholder="请输入相比价商品">
+        </div>
+        <a href="../index.html" class="login">
+            <img src="../images/header_app.png" alt="">
+        </a>
+    </header>
+
+
+
+
+    <div class="view">
+        <div class="list">
+            <!-- <a href='./8.1list.html'>
+                <img src="../images/ic_temai.png" alt="">
+                <p>肯德基</p>
+            </a>
+            <a href='javascript:;'>
+                <img src="../images/ic_temai.png" alt="">
+                <p>肯德基</p>
+            </a>
+            <a href='javascript:;'>
+                <img src="../images/ic_temai.png" alt="">
+                <p>肯德基</p>
+            </a>
+            <a href='javascript:;'>
+                <img src="../images/ic_temai.png" alt="">
+                <p>肯德基</p>
+            </a>
+            <a href='javascript:;'>
+                <img src="../images/ic_temai.png" alt="">
+                <p>肯德基</p>
+            </a> -->
+        </div>
+
+    </div>
+
+
+
+
+
+    
+
+
+</body>
+
+</html>
+<!-- 模板引擎 -->
+<script src="../lib/arttemplate/template-web.js"></script>
+<!-- zepto -->
+<script src="../lib/zepto/zepto.js"></script>
+<script id="getcoupon" type="text/template">
+
+
+{{each arr value index }}
+<a href='./8.1list.html?xx={{value.couponId}}'>
+    <img src=" {{@ value.couponImg}}" alt=""/>
+    <p>{{value.couponTitle}}</p>
+</a>
+{{/each}}
+
+</script>
+
+<script type="text/javascript">
+    $.get("http://193.112.55.79:9090/api/getcoupon",function (ret) {
+       console.log(ret);
+ 
+       // template(模板的id,要渲染的数据)
+       var html=template("getcoupon",{arr:ret.result});
+       // console.log(html);
+       // 渲染
+       $(".list").html(html);
+ 
+       // evnetList();
+     })
+ 
+ </script>
+
+

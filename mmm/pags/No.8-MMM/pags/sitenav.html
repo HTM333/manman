@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+
+
+  <!--引入模板-->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!--引入公共样式-->
+  <link rel="stylesheet" href="../css/base.css">
+  <!--引入自己样式-->
+  <link rel="stylesheet" href="../css/class.css">
+
+  <title>Document</title>
+  <style>
+  
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="../../../index.html" class="logo">
+            <img src="../images/header_logo.png" alt="">
+        </a>
+    <div class="search">
+      <input type="text" placeholder="请输入相比价商品">
+    </div>
+    <a href="../../../index.html" class="login">
+            <img src="../images/header_app.png" alt="">
+        </a>
+  </header>
+
+  <div class="box">
+
+
+    <!--下拉列表-->
+    <div class="litbiao">
+      <ul class="litbiao_ul">
+
+      </ul>
+    </div>
+  </div>
+  <footer>
+    <div>
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;" class="footer_top">返回顶部</a>
+    </div>
+    <p class="footer_buy">
+      <a href="javascript:;">手机APP下载</a> 慢慢买手机版--掌上比价平台
+    </p>
+    <p>m.manmanbuy.com</p>
+  </footer>
+  <div class="boxbox closebox">
+  </div>
+  <div class="guanggao">
+    <sapn class="glyphicon glyphicon-remove"></sapn>
+    <i>慢</i>
+    <div>
+      <a>慢慢买</a>
+      <a>全网比价，查看历史价格</a>
+    </div>
+    <em>立即打开</em>
+  </div>
+</body>
+<!--列表模板-->
+<script id="navTpl" type="text/html">
+  {{each arr value index }}
+  <li class="lis">
+    <div data_id="{{value.titleId}}"> {{@ value.title}}
+      <span class="glyphicon glyphicon-menu-down"></span>
+    </div>
+
+    <div class="dianqi">
+      <ul>
+        <!--<li><a href="javascript:;">电视</a></li>-->
+
+
+      </ul>
+    </div>
+
+  </li>
+
+  {{/each}}
+</script>
+<script id="navTpl1" type="text/html">
+  {{each arr value index }}
+  <li><a href="./2.1shopping.html?xx={{value.titleId}}">{{@ value.category}}</a></li>
+
+
+  {{/each}}
+</script>
+<!--引入模板引擎-->
+<script src="../lib/arttemplate/template-web.js"></script>
+<!--引入触屏js-->
+<script src="../lib/zepto/zepto.js"></script>
+<!--引入模板-->
+<!--<script src="../js/bootstrap.min.js"></script>-->
+<script src="../js/jquery-2.2.2.min.js"></script>
+<script>
+  jQuery.noConflict()
+</script>
+<script>
+  $(window).scroll(function () {
+    // 滚动条距离顶部的距离 大于 200px时
+    if ($(window).scrollTop() >= 200) {
+      $(".guanggao").animate({
+        opacity: "1"
+      }, 2000);
+    } else {
+      $(".guanggao").animate({
+        opacity: "0"
+      }, 2000);
+    }
+  });
+  $(function () {
+    var fais = true;
+    $('.boxbox').tap(function () {
+      $(this).toggleClass('closebox');
+      if (fais) {
+        $('audio')[0].pause() //在外面设置一个
+        fais = false
+      } else {
+        $('audio')[0].play()
+        fais = true
+      }
+    })
+    init();
+
+    function init() {
+      // 就需要执行的代码
+      getIndexmenu();
+
+      // 对于一些动态生成的标签 绑定事件
+      // 1 使用委托
+      // 2 帮绑定的代码 放在发送请求的成功的回调函数里面
+      evnetList();
+    }
+
+    // 绑定一坨事件
+    function evnetList() {
+      // 点击更多 切换显示后四个菜单
+      // console.log( $("nav a:nth-child(8)"));
+      // 事件委托
+
+      $(".litbiao_ul").on("tap", ".lis", function () {
+        id = $(this).children("div").eq(0).attr("data_id")
+        // console.log(id);
+        $.get("http://193.112.55.79:9090/api/getcategory", {
+          "titleid": id
+        }, function (ret, e) {
+          //  console.log(ret);
+          var html = template("navTpl1", {
+            arr: ret.result
+          });
+          // console.log($(".dianqi>ul"));
+          // 渲染
+
+          $(".dianqi>ul").html(html);
+        })
+      })
+
+    }
+
+    // 获取首页导航菜单的数据
+    function getIndexmenu() {
+      // 使用zepto发送请求
+      $.get("http://193.112.55.79:9090/api/getcategorytitle", function (ret) {
+        // console.log(ret);
+
+        // template(模板的id,要渲染的数据)
+        var html = template("navTpl", {
+          arr: ret.result
+        });
+
+        // 渲染
+        $(".litbiao_ul").html(html);
+
+        // evnetList();
+      })
+
+    }
+  })
+</script>
+
+</html>

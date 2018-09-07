@@ -1,0 +1,164 @@
+.main {
+  width: 100%;
+}
+
+.main .main_title {
+  width: 100%;
+  padding: 10px 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .main_title .main_title_l {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .main_title .main_title_l a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 5px;
+  font-size: .18rem;
+  white-space: nowrap;
+}
+
+.main .main_title .main_title_l span {
+  margin-left: 5px;
+  font-size: .18rem;
+}
+
+.main .main_title .main_title_l .render1 {
+  margin-left: 5px;
+  font-size: .18rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main .main_title .main_title_l .render2 {
+  width: 2.5rem;
+  margin-left: 5px;
+  font-size: .18rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main .main_title .main_title_r {
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: #aaa;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.main .main_data {
+  width: 100%;
+  background-color: #fff;
+}
+
+.main .main_data .mian_data_title {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.main .main_data .mian_data_title .main_data_img {
+  width: 3rem;
+  height: 3rem;
+  margin: 5px auto;
+}
+
+.main .main_data .mian_data_title h3 {
+  margin: 10px auto;
+  width: 5rem;
+  text-align: center;
+  font-weight: normal;
+  font-size: .18rem;
+}
+
+.main .main_data .mian_data_title .main_data_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main .main_data .mian_data_title .main_data_btn a {
+  padding: 10px 0;
+  background-color: #d40479bf;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+
+.main .main_data .mian_data_title .main_data_btn a:last-child {
+  border-right: none;
+}
+
+.main .main_data tbody tr:nth-child(1) {
+  height: 15px;
+}
+
+.main .main_data tbody tr:nth-child(1) .p_pic {
+  width: .2rem;
+  height: .2rem;
+}
+
+.main .main_data tbody tr:nth-child(1) .red {
+  width: 100px;
+  color: red;
+}
+
+.main .mian_pj {
+  background-color: #fff;
+}
+
+.main .mian_pj .mian_pj_btn {
+  width: 100%;
+  height: 50px;
+  background-color: #e3e3e3;
+  text-align: center;
+  line-height: 50px;
+  font-size: .22rem;
+}
+
+.main .mian_pj .main_pj_text {
+  color: #a1a1a1;
+}
+
+.main .mian_pj .main_pj_text .text_list .up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  padding: 0 10px;
+  margin-top: 15px;
+}
+
+.main .mian_pj .main_pj_text .text_list .bottom {
+  width: 100%;
+  border-bottom: 1px solid #a1a1a1;
+  padding: 10px 10px 20px;
+}
+
+.main .mian_pj .main_pj_text .text_list .bottom p {
+  color: #666;
+  word-wrap: break-word;
+}

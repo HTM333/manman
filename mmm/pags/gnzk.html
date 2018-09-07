@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/gnzk.css">
+    
+</head>
+<body>
+    <header>国内折扣</header>
+    <div class="gn_content">
+    </div>
+
+        <footer>
+                <div>
+                    <a href="javascript:;">登录</a>
+                    <a href="javascript:;">注册</a>
+                    <a href="../index.html" class="footer_top">
+                        <span>返回主页</span>
+                    </a>
+                </div>
+                <p class="footer_buy">
+                    <a href="javascript:;">手机APP下载</a>
+                    慢慢买手机版--掌上比价平台
+                </p>
+                <p>m.manmanbuy.com</p>
+            </footer>
+</body>
+<script src="../js/zepto.js"></script>
+<script src="../js/template-web.js"></script>
+<script src="../js/gnzk.js"></script>
+<script src="../js/iscroll.js"></script>
+
+<script id="comm" type="text/html">
+    {{each arr value index }}
+        <div class="gn_content">
+            <h4 class="con_title">{{value.productName}}</h4>
+            <div class="con_time">
+                <span>{{value.productTime}}</span>
+                <span>{{value.productTips}}</span>
+            </div>
+            <div class="con_con">
+                    <div class="con_sImg">
+                            {{@ value.productImgSm}}
+                    </div>
+                    
+                <p>{{value.productInfo}}</p>
+                <p>{{value.productInfo1}}</p>
+                
+                {{@ value.productImgLg}}
+            </div>
+            <div class="con_buy">
+                立即购买
+            </div>
+            
+            <div class="buyIng">
+                    <!-- <div class="con_btn">x</div> -->
+                    {{@ value.productCity}}
+            </div>
+            <img src="../images/mmbweixin2.png" alt="">
+            {{@ value.productComment}}
+            
+  {{/each}}
+</script>
+<script>
+     // 转换rem单位
+        setFz();
+        window.onresize = function () {
+            setFz();
+        }
+        function setFz() {
+    
+            var screenWidth = document.querySelector("html").offsetWidth;
+            // 基础值
+            var baseVal = 100;
+            // 设计稿的宽度
+            var pageWidth = 640;
+            // 字体大小
+            var fz = baseVal * screenWidth / pageWidth;
+    
+            document.querySelector("html").style.fontSize = fz + "px";
+    
+        }
+        var myScroll = new IScroll('.buyIng');
+
+</script>
+</html>

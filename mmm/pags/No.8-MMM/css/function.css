@@ -1,0 +1,194 @@
+@charset "UTF-8";
+/*在这里写功能列表页面*/
+.ping a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0.2rem;
+  height: 0.56rem;
+  line-height: 0.56rem;
+  font-size: 0.27rem;
+  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ff841d;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ping a span:nth-child(1) {
+  font-size: 0.3rem;
+}
+
+.ping a span {
+  letter-spacing: 0.03rem;
+}
+
+.ping a span:nth-child(3) {
+  width: 0.59rem;
+  padding: 0.08rem;
+}
+
+/*下拉菜单*/
+.xiala {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 0.01rem solid gray;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 0.43rem;
+  padding-left: 0.15rem;
+}
+
+.xiala .glyphicon {
+  margin-left: 0.06rem;
+}
+
+.xiala > span {
+  border-left: 1px solid gray;
+  display: inline-block;
+  height: 100%;
+  font-size: 0.29rem;
+  padding: 0.06rem;
+  width: 2em;
+  text-align: center;
+  padding-right: 0.08rem;
+  color: gray;
+}
+
+.xiala_two ul li {
+  line-height: 0.43rem;
+  height: 0.43rem;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  padding-left: 0.03rem;
+}
+
+/*内容*/
+.content ul {
+  width: 100%;
+  background-color: #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content ul li:nth-child(2n) {
+  margin-left: 0.1rem;
+}
+
+.content ul li {
+  padding: 0.1rem;
+  margin-top: 0.1rem;
+  border: 1px solid #000;
+  width: 49%;
+  background-color: #fff;
+}
+
+.content ul li p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content ul li div {
+  width: 100%;
+}
+
+.content ul li .money span {
+  margin-left: 0.13rem;
+}
+
+.content ul li .money span:nth-child(2) {
+  float: right;
+  margin-right: 0.13rem;
+  background-color: orange;
+  border-radius: .05rem;
+  border: 1px solid #000;
+  color: #fff;
+  font-family: STKaiti;
+}
+
+.guanggao {
+  opacity: 0;
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: .5rem;
+  padding: .1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.guanggao .glyphicon {
+  width: .17rem;
+  height: .17rem;
+  font-weight: 100;
+  line-height: .17rem;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background-color: gray;
+}
+
+.guanggao i {
+  font-size: .3rem;
+  position: absolute;
+  left: .33rem;
+  bottom: .12rem;
+  width: .3rem;
+  height: .3rem;
+  border-radius: .05rem;
+  color: #fff;
+  background-color: orange;
+  width: .37rem;
+  height: .37rem;
+  margin: 0 .1rem;
+  line-height: .37rem;
+  text-align: center;
+}
+
+.guanggao > div {
+  position: absolute;
+  left: 1rem;
+  bottom: .12rem;
+  font-size: .12rem;
+  color: gray;
+}
+
+.guanggao em {
+  position: absolute;
+  right: .12rem;
+  bottom: .12rem;
+  width: .6rem;
+  height: .23rem;
+  color: #fff;
+  text-align: center;
+  line-height: .23rem;
+  font-size: .12rem;
+  border-radius: .05rem;
+  background-color: orange;
+}
+
+footer {
+  margin-bottom: .66rem;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/media.css">
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/11.1.ppdq.css">
+
+</head>
+
+<body>
+  <header>
+    <a href="../index.html" class="logo">
+      <img src="../images/header_logo.png" alt="">
+    </a>
+    <div class="search">
+      <input type="text" placeholder="请输入相比价商品">
+    </div>
+    <a href="../index.html" class="login">
+      <img src="../images/header_app.png" alt="">
+    </a>
+  </header>
+
+  <!-- 内容开始 -->
+  <div class="main">
+    <div class="main_title">
+      <div class="main_title_l">
+          <a href="../index.html">首页</a>
+          <span> > </span>
+          <a href="./brandTitle.html">全部分类</a>
+          <span> > </span>
+          <div class="render"></div>
+      </div>
+      <div class="main_title_r">
+          <a href="./brandTitle.html">返回</a>
+      </div>
+    </div>
+    <!-- 商品列表 -->
+    <div class="list">
+      <!-- <div class="list_box">
+        <div class="list_box_l">
+            <img src="../update/Thumb_2014060013462043295.jpg" alt="">
+        </div>
+        <div class="list_box_r">
+            <h4>定你大咖啡机喇返 阿萨德附近了阿萨德附近了阿萨德附近了阿萨德附近了阿萨德附近了</h4>
+            <div class="rmb">￥1234</div>
+            <span class="bj">报价（1）</span>
+            <span class="pl">评论（123123）</span>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="upTop">
+      <span></span>
+      </div>
+
+  <footer>
+    <div>
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;" class="footer_top">
+        <span>查看更多</span>
+      </a>
+    </div>
+    <p class="footer_buy">
+      <a href="javascript:;">手机APP下载</a>
+      慢慢买手机版--掌上比价平台
+    </p>
+    <p>m.manmanbuy.com</p>
+  </footer>
+</body>
+
+</html>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+<script src="../js/11.1.ppdq.js"></script>
+<script type="text/html">
+
+</script>
+<script type="text/html" id="listTemplate">
+  {{each arr as key val}}
+    <a href="./3.2.spxq.html?id={{key.productListId}}" class="list_box">
+      <div class="list_box_l">
+       {{@key.productImg}}
+      </div>
+      <div class="list_box_r">
+          <h4>{{key.productName}}</h4>
+          <div class="rmb">{{key.productPrice}}</div>
+          <span class="bj">{{key.productQuote}}</span>
+          <span class="pl">{{key.productCom}}</span>
+      </div>
+    </a>
+  {{/each}}
+</script>

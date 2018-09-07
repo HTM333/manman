@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!--引入公共样式-->
+  <link rel="stylesheet" href="../css/base.css">
+  <!--引入自己样式-->
+  <link rel="stylesheet" href="../css/function.css">
+
+  <title>Document</title>
+  <style>
+    .content li div:nth-child(1) {
+      width: 2.9159rem;
+      height: 2.9159rem;
+      background: url(../images/62.png) no-repeat;
+      /*background-position: 100% 100%;*/
+      background-size: 100% 100%;
+    }
+  </style>
+</head>
+
+
+<body>
+  <header>
+
+    <a href="../../../index.html" class="logo">
+            <img src="../images/header_logo.png" alt="">
+        </a>
+    <div class="search">
+      <input type="text" placeholder="请输入相比价商品">
+    </div>
+    <a href="../../../index.html" class="login">
+            <img src="../images/header_app.png" alt="">
+        </a>
+  </header>
+  <!--凑单品-->
+  <div class="ping">
+    <a href="javascript:;">
+    <span class="glyphicon glyphicon-menu-left"></span>
+    <span>国内折扣</span>
+    <span><img src="../images/header_app.png" alt=""></span>
+
+   </a>
+  </div>
+  <!--下拉菜单-->
+
+  <div class="xiala_two">
+    <ul>
+
+    </ul>
+  </div>
+  <!--内容-->
+  <div class="content">
+    <ul>
+      <li>
+        <div><img src="" alt=""></div>
+        <p>sdfsda</p>
+        <div class="money ">
+          <sapn></sapn>
+          <span>去凑单</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button id="btn">
+  更多.......
+</button>
+  <footer>
+    <div>
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;" class="footer_top">返回顶部 </a>
+    </div>
+    <p class="footer_buy">
+      <a href="javascript:;">手机APP下载</a> 慢慢买手机版--掌上比价平台
+    </p>
+    <p>m.manmanbuy.com</p>
+  </footer>
+  <div class="guanggao">
+    <sapn class="glyphicon glyphicon-remove"></sapn>
+    <i>慢</i>
+    <div>
+      <a>慢慢买</a>
+      <a>全网比价，查看历史价格</a>
+    </div>
+    <em>立即打开</em>
+  </div>
+</body>
+<!--引入分页插件-->
+<!--<script src="../js/jquery.twbsPagination.js"></script>-->
+<!--引入模板引擎-->
+<script src="../lib/arttemplate/template-web.js"></script>
+<!--引入触屏js-->
+<script src="../lib/zepto/zepto.js"></script>
+<!-- 模板 -->
+
+<!--内容模板-->
+<script id="navTpl1_3" type="text/html">
+  {{each arr value index }}
+  <li>
+    <div>{{@ value.productImg}}</div>
+    <p>{{@ value.productName}}</p>
+    <div class="money ">
+      <sapn>{{@ value.productPrice}}</sapn>
+
+    </div>
+  </li>
+  {{/each}}
+</script>
+<script src="../js/jquery-2.2.2.min.js"></script>
+<script>
+  jQuery.noConflict();
+</script>
+<script type="text/javascript">
+  $(window).scroll(function () {
+    // 滚动条距离顶部的距离 大于 200px时
+    if ($(window).scrollTop() >= 200) {
+      $(".guanggao").animate({
+        opacity: "1"
+      }, 2000);
+    } else {
+      $(".guanggao").animate({
+        opacity: "0"
+      }, 2000);
+    }
+  });
+  $("#btn").tap(function () {
+    alert("别点了，下面没有了！！！");
+  })
+
+  // .attr("属性") 
+  name();
+
+  function name() {
+
+    $.get("http://193.112.55.79:9090/api/getinlanddiscount", function (ret) {
+   
+
+      var html = template("navTpl1_3", {
+        arr: ret.result
+      });
+
+      // 渲染
+      $(".content>ul").html(html);
+
+    })
+
+  }
+  $(function () {
+    name()
+  })
+</script>
+
+
+</html>

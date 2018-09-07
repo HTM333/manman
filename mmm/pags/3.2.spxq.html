@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/media.css">
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/3.2.spxq.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">
+          <img src="../images/header_logo.png" alt="">
+        </a>
+        <div class="search">
+          <input type="text" placeholder="请输入相比价商品">
+        </div>
+        <a href="../index.html" class="login">
+          <img src="../images/header_app.png" alt="">
+        </a>
+      </header>
+    
+      <!-- 内容开始 -->
+      <div class="main">
+        <div class="main_title">
+          <div class="main_title_l">
+              <a href="../index.html">首页</a>
+              <span> > </span>
+              <a href="./3.1.splb.html" class="render1"></a>
+              <span> > </span>
+              <a href="javascript:;" class="render2"></a>
+          </div>
+          <div class="main_title_r">
+              <a href="./3.bjss.html">返回</a>
+          </div>
+        </div>
+        <!-- 商品详情 -->
+        <div class="main_data">
+          <!-- <div class="mian_data_title">
+            <h3>546445646545464655464456465454646554644564654546465</h3>
+            <div class="main_data_img">
+              <img src="../update/53a825adNe88eac73.jpg" alt="">
+            </div>
+            <div class="main_data_btn">
+              <a href="javascript:;" class="bj">比价购买</a>
+              <a href="javascript:;" class="cp">产品参数</a>
+              <a href="javascript:;" class="pj">评价（5464）</a>
+            </div>
+          </div> -->
+        </div>
+        <!-- 网友评价 -->
+        <div class="mian_pj">
+          <div class="mian_pj_btn">
+            网友评价
+          </div>
+          <div class="main_pj_text">
+            <!-- <div class="text_list">
+                <div class="up">
+                    <div class="up_l">
+                      1654465
+                    </div>
+                    <div class="up_r">
+                      <p>654-564</p>
+                      <p>5646564</p>
+                    </div>
+                  </div>
+                  <div class="bottom">
+                    <p>
+                      51651651asd1f6514asd651f561as65d1f61sa6fdf51af51651651asd1f6514asd651f561as65d1f61sa6fdf51af51651651asd1f6514asd651f561as65d1f61sa6fdf51af51651651asd1f6514asd651f561as65d1f61sa6fdf51af51651651asd1f6514asd651f561as65d1f61sa6fdf51af51651651asd1f6514asd651f561as65d1f61sa6fdf51af51651651asd1f6514asd651f561as65d1f61sa6fdf51af
+                    </p>
+                  </div>
+            </div> -->
+          </div>
+        </div>
+    
+      <footer>
+        <div>
+          <a href="javascript:;">登录</a>
+          <a href="javascript:;">注册</a>
+          <a href="javascript:;" class="footer_top">
+            <span>返回顶部</span>
+          </a>
+        </div>
+        <p class="footer_buy">
+          <a href="javascript:;">手机APP下载</a>
+          慢慢买手机版--掌上比价平台
+        </p>
+        <p>m.manmanbuy.com</p>
+      </footer>
+</body>
+</html>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+<script src="../js/3.2.spxq.js"></script>
+<script type="text/html" id="main_dataTemplate">
+  {{each arr as key val}}
+    <div class="mian_data_title">
+        
+        <div class="main_data_img">
+          {{@key.productImg}}
+        </div>
+        <h3>{{key.productName}}</h3>
+        <div class="main_data_btn">
+          <a href="javascript:;" class="bj">比价购买</a>
+          <a href="javascript:;" class="cp">产品参数</a>
+          <a href="javascript:;" class="pj">评价（5464）</a>
+        </div>
+    </div>
+    {{@key.bjShop}}
+  {{/each}}
+</script>
+
+<script type="text/html" id="text_listTemplate">
+  {{each arr as key val}}
+        <div class="text_list">
+            <div class="up">
+                <div class="up_l">
+                  {{key.comName}}
+                </div>
+                <div class="up_r">
+                  <p>{{key.comTime}}</p>
+                  <p>{{key.comFrom}}</p>
+                </div>
+              </div>
+              <div class="bottom">
+                <p>
+                  {{key.comContent}}
+                </p>
+              </div>
+        </div>
+  {{/each}}
+</script>

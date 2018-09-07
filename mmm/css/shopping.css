@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/*在这里写商品列表的样式*/
+/*返回分类列表*/
+.fanhui {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: .3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fanhui button {
+  position: absolute;
+  right: .2rem;
+}
+
+/*内容*/
+.content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content .box {
+  width: 100%;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: .1rem;
+}
+
+.content .box .left {
+  width: 1rem;
+  margin-right: .1rem;
+}
+
+.content .box .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.content .box .right p {
+  font-size: .17rem;
+}
+
+.content .box .right i {
+  color: red;
+  font-size: .18rem;
+}
+
+.content .box .right div span {
+  color: gray;
+}
+
+.guanggao {
+  opacity: 0;
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: .5rem;
+  padding: .1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.guanggao .glyphicon {
+  width: .17rem;
+  height: .17rem;
+  font-weight: 100;
+  line-height: .17rem;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background-color: gray;
+}
+
+.guanggao i {
+  font-size: .3rem;
+  position: absolute;
+  left: .33rem;
+  bottom: .12rem;
+  width: .3rem;
+  height: .3rem;
+  border-radius: .05rem;
+  color: #fff;
+  background-color: orange;
+  width: .37rem;
+  height: .37rem;
+  margin: 0 .1rem;
+  line-height: .37rem;
+  text-align: center;
+}
+
+.guanggao > div {
+  position: absolute;
+  left: 1rem;
+  bottom: .12rem;
+  font-size: .12rem;
+  color: gray;
+}
+
+.guanggao em {
+  position: absolute;
+  right: .12rem;
+  bottom: .12rem;
+  width: .6rem;
+  height: .23rem;
+  color: #fff;
+  text-align: center;
+  line-height: .23rem;
+  font-size: .12rem;
+  border-radius: .05rem;
+  background-color: orange;
+}
+
+footer {
+  margin-bottom: .66rem;
+}

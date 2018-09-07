@@ -1,0 +1,178 @@
+
+h1{
+    margin: 0;
+}
+header{
+    background: #ea0084;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    padding-left: 10px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.gn_content{
+    // margin: 0 .2rem;
+    width: 100%;
+    padding: .1rem .3rem;
+    background: white;
+    position: relative;
+    .con_title{
+        margin: 0;
+        font-weight: 600;
+        padding: .2rem 0;
+    }
+    .con_time{
+        padding-bottom: .3rem;
+        span{
+            font-size: .16rem;
+            color: #ccc;
+           
+        }
+
+    }
+    .con_con{
+        width: 100%;
+        .con_sImg{
+            float: right;
+            width: 100px;
+            height: 100px;
+            margin: 0 0 .05rem .2rem;
+            background: #ea0084;
+        }
+        >p{
+            word-wrap:break-word;
+            line-height: .5rem;
+        }
+        .bigImg{
+            margin: 0 auto;
+        }
+    }
+    .con_buy{
+        
+            margin: .5rem auto;
+            height: .5rem;
+            width: 80%;
+            background:  #ea0084;
+            text-align: center;
+            line-height: .5rem;
+            color: white;
+            border-radius: .08rem;
+        
+    }
+    .buyIng{
+        
+        display: none;
+        width: 70%;
+        height: 3rem;
+        overflow: hidden;
+        margin: .5rem auto;
+        position: relative;
+        >.con_btn{
+            text-align: center;
+            height: .3rem;
+            width: 0.3rem;
+            padding: 0;
+            line-height: .3rem;
+            font-size: .16rem;
+            border-radius: .15rem;
+            position: absolute;
+            background: #ea0084;
+            top: 0;
+            right: 0;
+            // top: -0.2rem;
+            // right: -0.05rem;
+        }
+        ul{
+            border: .01rem solid #ccc;
+            width: 100%;
+            background: white;
+            li{
+                padding: .05rem 0;
+                
+                border-bottom: .01rem solid #ccc;
+                a{
+                    color: #606060;
+                    span{
+                        display: flex;
+                        justify-content: space-around;
+                        strong{
+                            color: #ea0084;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+.cu-content-pl{
+    .tit{
+        padding-top: .3rem;
+    }
+    .reply{
+        border: .01rem solid #ccc;
+        padding-top: 0.01rem;
+        overflow: hidden;
+        #ctl00_ContentBody_txt_nr{
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline:0;
+        }
+        .ctrl{
+            
+            height: 36px;
+            margin-left: -4px;
+            border-top: solid 1px #f2f2f2;
+            input{
+                background-color: #ea0084;
+                color: white;
+            }
+            
+        }
+    }
+    .list{
+        ul{
+            li{
+                padding: .2rem 0;
+                .userimg{
+                    width: .4rem;
+                    float: left;
+                    overflow: hidden;
+                    img{
+                        width: .4rem;
+                        background-position: top;
+                        border-radius: .2rem;
+                        height: .4rem;
+                    }
+                }
+                .con{
+                    
+                    .name{
+                        padding-left: .5rem;
+                        .username {
+                            color: #5997c0;
+                            font-size: .13rem;
+                            float: left;
+                        }
+                        .time {
+                            color: #999999;
+                            font-size: .13rem ;
+                            float: right;
+                        }
+                    }
+                    .content {
+                        padding-left: .5rem;
+                        word-break: break-all;
+                        font-size: 15px !important;
+                        color: #606060;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

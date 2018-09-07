@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!--引入公共样式-->
+  <link rel="stylesheet" href="../css/base.css">
+  <!--引入自己样式-->
+  <link rel="stylesheet" href="../css/pinglun.css">
+
+  <title>Document</title>
+
+</head>
+
+
+<body>
+   
+  <header>
+    <a href="../../../index.html" class="logo">
+            <img src="../images/header_logo.png" alt="">
+        </a>
+    <div class="search">
+      <input type="text" placeholder="请输入相比价商品">
+    </div>
+    <a href="../../../index.html" class="login">
+            <img src="../images/header_app.png" alt="">
+        </a>
+  </header>
+  <!--返回分类列表-->
+
+  <div class="fanhui">
+    <a href="javascript:;">首页<span class="glyphicon glyphicon-menu-right"></span></a>
+    <a href="./sitenav.html">分类<span class="glyphicon glyphicon-menu-right"></span></a>
+    <a href="javascript:;">列表<span class="glyphicon glyphicon-menu-right"></span></a>
+    <button class="pull-right">筛选</button>
+  </div>
+  <h1>网友评价</h1>
+  <!--内容-->
+  <div class="content">
+    <ul>
+      <!--<li class="clearfix">
+        <div class="content_one">
+          <span> +++</span>
+          <span>time</span>
+        </div>
+        <i class="pull-right">来自</i>
+        <p>内容</p>
+      </li>-->
+    </ul>
+  </div>
+  <button id="btn">
+  更多网友评论
+</button>
+  <footer>
+    <div>
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;" class="footer_top">返回顶部 </a>
+
+
+
+    </div>
+    <p class="footer_buy">
+      <a href="javascript:;">手机APP下载</a> 慢慢买手机版--掌上比价平台
+    </p>
+    <p>m.manmanbuy.com</p>
+  </footer>
+  <div class="boxbox closebox">
+  </div>
+   <div class="guanggao">
+    <sapn class="glyphicon glyphicon-remove"></sapn>
+    <i>慢</i>
+    <div>
+      <a>慢慢买</a>
+      <a>全网比价，查看历史价格</a>
+    </div>
+    <em>立即打开</em>
+  </div>
+</body>
+<!--引入分页插件-->
+<!--<script src="../js/jquery.twbsPagination.js"></script>-->
+<!--引入模板引擎-->
+<script src="../lib/arttemplate/template-web.js"></script>
+<!--引入触屏js-->
+<script src="../lib/zepto/zepto.js"></script>
+<!-- 模板 -->
+<script id="navTpl1" type="text/html">
+  {{each arr value index }}
+  <li class="clearfix">
+    <div class="content_one">
+      <span>{{@ value.comName}}</span>
+      <span>{{@ value.comTime}}</span>
+    </div>
+    <i class="pull-right">{{@ value.comFrom}}</i>
+    <p>{{@ value.comContent}}</p>
+  </li>
+  {{/each}}
+</script>
+<script src="../js/jquery-2.2.2.min.js"></script>
+<script>
+  jQuery.noConflict()
+</script>
+<script type="text/javascript">
+ $(window).scroll(function () {
+    // 滚动条距离顶部的距离 大于 200px时
+    if ($(window).scrollTop() >= 200) {
+      $(".guanggao").animate({
+        opacity: "1"
+      }, 2000);
+    } else {
+      $(".guanggao").animate({
+        opacity: "0"
+      }, 2000);
+    }
+  });
+ var fais = true;
+    $('.boxbox').tap(function () {
+      $(this).toggleClass('closebox');
+      if (fais) {
+        $('audio')[0].pause() //在外面设置一个
+        fais = false
+      } else {
+        $('audio')[0].play()
+        fais = true
+      }
+    })
+ $("#btn").tap(function () {
+   alert("别点了，下面没有了！！！");
+ })
+  function GetRequest() {
+    //获取url中"?"符后的字串  
+    var url = location.search;
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for (var i = 0; i < strs.length; i++) {
+        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
+
+  var id = GetRequest().xx
+
+  $.get("http://193.112.55.79:9090/api/getproductcom", {
+    "productid": id
+  }, function (ret) {
+
+
+    var html = template("navTpl1", {
+      arr: ret.result
+    });
+
+    // 渲染
+    $(".content>ul").html(html);
+    
+  })
+
+</script>
+
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/media.css">
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/11.ppdq.css">
+</head>
+
+<body>
+  <header>
+    <a href="../index.html" class="logo">
+      <img src="../images/header_logo.png" alt="">
+    </a>
+    <div class="search">
+      <input type="text" placeholder="请输入相比价商品">
+    </div>
+    <a href="../index.html" class="login">
+      <img src="../images/header_app.png" alt="">
+    </a>
+  </header>
+
+  <div class="main_title_1">
+    <div class="main_title_l">
+      <a href="../index.html">首页</a>
+      <span> > </span>
+      <a href="javascript:;">全部分类</a>
+      <span> > </span>
+    </div>
+  </div>
+
+  <div class="main_title_2">
+    <div class="mian_text">热门品牌排行</div>
+  </div>
+
+  <!-- 内容开始 -->
+  <div class="main">
+
+    <!-- 分类页面大家电 -->
+    <!-- <div class="list">
+      <div class="list_title">
+        <span>大 家 电</span>
+        <span>></span>
+      </div>
+      <div class="list_main">
+        <a href="javascript:;">平板电脑</a>
+        <a href="javascript:;">空调</a>
+        <a href="javascript:;">空调</a>
+        <a href="javascript:;">空调</a>
+        <a href="javascript:;">空调</a>
+        <a href="javascript:;">空调</a>
+        <a href="javascript:;">空调</a>
+        <a href="javascript:;">空调</a>
+        <a href="javascript:;">空调</a>
+        <a href="javascript:;">空调</a>
+      </div>
+    </div> -->
+
+  </div>
+
+  <footer>
+    <div>
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;" class="footer_top">
+        <span>返回顶部</span>
+      </a>
+    </div>
+    <p class="footer_buy">
+      <a href="javascript:;">手机APP下载</a>
+      慢慢买手机版--掌上比价平台
+    </p>
+    <p>m.manmanbuy.com</p>
+  </footer>
+</body>
+
+</html>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+<script src="../js/11.ppdq.js"></script>
+<script type="text/html" id="list_main">
+  {{each arr key val}}
+      <div class="list">
+        <div class="list_title" data-id="{{key.brandTitleId}}">
+          <span>{{key.brandTitle}}</span>
+          <span></span>
+        </div>
+        <div class="list_main clearfix">
+        </div>
+      </div>
+    {{/each}}
+</script>
+<script type="text/html" id="list_all">
+  {{each arr key val}}
+      <a href="./11.1.ppdq.html?id={{key.brandId}}">
+        <span class="num">{{val+1}}</span>
+        <span class="center">
+          <div class="center_up">{{key.brandName}}</div>
+          <div class="center_bottom">{{key.brandInfo}}</div>
+        </span>
+        <span class="right"></span>
+      </a>
+  {{/each}}
+</script>
